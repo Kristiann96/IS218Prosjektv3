@@ -37,12 +37,12 @@ function setupLocationTracking(map, positionLayer, shelterLayer, bunkerLayer, ro
         const closestBunker = findClosestMarkerWithRoute(e.latlng, bunkerLayer, routeLayer, 'red');
 
         // Create information popup
-        let popupContent = `<b>Din posisjon</b><br>Nøyaktighet: ${radius.toFixed(1)} meter<br><br>`;
+        let popupContent = `<b>Din posisjon</b><br>Nï¿½yaktighet: ${radius.toFixed(1)} meter<br><br>`;
 
         if (closestShelter.marker) {
-            popupContent += `<b>Nærmeste Shelter:</b> ${Math.round(closestShelter.distance)} meter<br>`;
+            popupContent += `<b>NÃ¦rmeste Alternative Tilfluktsrom:</b> ${Math.round(closestShelter.distance)} meter<br>`;
         } else {
-            popupContent += `<b>Ingen Shelters funnet</b><br>`;
+            popupContent += `<b>Ingen Alternative Tilfluktsrom funnet</b><br>`;
         }
 
         if (closestBunker.marker) {
@@ -54,7 +54,7 @@ function setupLocationTracking(map, positionLayer, shelterLayer, bunkerLayer, ro
                 bunkerDetails = popupElement.textContent.trim().replace(/\n\s+/g, ', ');
             }
 
-            popupContent += `<b>Nærmeste Tilfluktsrom:</b> ${Math.round(closestBunker.distance)} meter`;
+            popupContent += `<b>NÃ¦rmeste Tilfluktsrom:</b> ${Math.round(closestBunker.distance)} meter`;
             if (bunkerDetails) {
                 popupContent += `<br><small>${bunkerDetails}</small>`;
             }
@@ -173,9 +173,9 @@ function setupCustomMarker(map, customLayer, shelterLayer, bunkerLayer, routeLay
 
         // Build popup content
         if (closestShelter.marker) {
-            popupContent += `<b>Nærmeste Shelter:</b> ${distanceShelter} ${distanceUnitShelter}<br>`;
+            popupContent += `<b>NÃ¦rmeste Alternative Tilfluktsrom:</b> ${distanceShelter} ${distanceUnitShelter}<br>`;
         } else {
-            popupContent += `<b>Ingen Shelters funnet</b><br>`;
+            popupContent += `<b>Ingen Alternative Tilfluktsrom funnet</b><br>`;
         }
 
         if (closestBunker.marker) {
@@ -186,7 +186,7 @@ function setupCustomMarker(map, customLayer, shelterLayer, bunkerLayer, routeLay
                 bunkerDetails = popupElement.textContent.trim().replace(/\n\s+/g, ', ');
             }
 
-            popupContent += `<b>Nærmeste Tilfluktsrom:</b> ${distanceBunker} ${distanceUnitBunker}`;
+            popupContent += `<b>NÃ¦rmeste Tilfluktsrom:</b> ${distanceBunker} ${distanceUnitBunker}`;
             if (bunkerDetails) {
                 popupContent += `<br><small>${bunkerDetails}</small>`;
             }

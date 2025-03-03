@@ -15,10 +15,6 @@ function createLocateControl(map, locationTracker, customMarkerHandler) {
               <img src="/assets/map-pin-svgrepo-com.svg" alt="Pin" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;">
               <span style="font-size: 16px; line-height: 20px;">Finn min posisjon</span>
             </button>
-            <button id="clear-custom-button" style="padding: 10px; background: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: flex; align-items: center;">
-              <img src="/assets/trash-svgrepo-com.svg" alt="Trash" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;">
-              <span style="font-size: 16px; line-height: 20px;">Fjern lilla markør</span>
-            </button>
           </div>
         `;
     
