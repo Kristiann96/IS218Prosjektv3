@@ -37,7 +37,7 @@ function setupLocationTracking(map, positionLayer, shelterLayer, bunkerLayer, ro
         const closestBunker = findClosestMarkerWithRoute(e.latlng, bunkerLayer, routeLayer, 'red');
 
         // Create information popup
-        let popupContent = `<b>Din posisjon</b><br>N�yaktighet: ${radius.toFixed(1)} meter<br><br>`;
+        let popupContent = `<b>Din posisjon</b><br>Nøyaktighet: ${radius.toFixed(1)} meter<br><br>`;
 
         if (closestShelter.marker) {
             popupContent += `<b>Nærmeste Alternative Tilfluktsrom:</b> ${Math.round(closestShelter.distance)} meter<br>`;
