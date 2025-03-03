@@ -31,7 +31,7 @@ function addShelters(shelterData, shelterLayer, icon) {
             const coordinates = point.geom.coordinates;
             L.marker([coordinates[1], coordinates[0]], { icon: icon })
                 .addTo(shelterLayer)
-                .bindPopup('Shelter');
+                .bindPopup('Alternativt Tilfluktsrom');
         }
     });
 }

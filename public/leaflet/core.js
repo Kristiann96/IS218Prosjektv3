@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const bombShelterIcon = L.icon({
             iconUrl: window.location.origin + '/assets/bunker-svgrepo-com-3.svg',
             iconSize: [30, 30],
-            iconAnchor: [20, 20], // Changed from [20, 40] to center the icon properly
-            popupAnchor: [0, -20] // Adjusted to match new anchor position
+            iconAnchor: [20, 20],
+            popupAnchor: [0, -20]
         });
 
         const shelterIcon = L.icon({
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create layer groups to hold our markers
         const shelterLayer = L.layerGroup().addTo(map);
         const bunkerLayer = L.layerGroup().addTo(map);
-        const positionLayer = L.layerGroup().addTo(map); // Layer for position marker
-        const customLayer = L.layerGroup().addTo(map); // Layer for custom markers
-        const routeLayer = L.layerGroup().addTo(map); // Layer for routes
+        const positionLayer = L.layerGroup().addTo(map);
+        const customLayer = L.layerGroup().addTo(map);
+        const routeLayer = L.layerGroup().addTo(map);
 
         // Fallback icons in case SVGs fail to load
         const fallbackShelterIcon = L.icon({
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (closestShelter.marker) {
                 popupContent += `<b>Nærmeste Alternative Tilfluktsrom:</b> ${distanceShelter} ${distanceUnitShelter}<br>`;
             } else {
-                popupContent += `<b>Ingen Shelters funnet</b><br>`;
+                popupContent += `<b>Ingen Alternative Tilfluktsrom funnet</b><br>`;
             }
 
             if (closestBunker.marker) {
@@ -412,10 +412,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button id="locate-button" style="padding: 10px; background: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: flex; align-items: center;">
                   <img src="/assets/map-pin-svgrepo-com.svg" alt="Pin" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;">
                   <span style="font-size: 16px; line-height: 20px;">Finn min posisjon</span>
-                </button>
-                <button id="clear-custom-button" style="padding: 10px; background: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: flex; align-items: center;">
-                  <img src="/assets/trash-svgrepo-com.svg" alt="Trash" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;">
-                  <span style="font-size: 16px; line-height: 20px;">Fjern lilla markør</span>
                 </button>
               </div>
             `;
