@@ -106,7 +106,7 @@ Prosjektet har flere muligheter for utvidelse og forbedring:
 1. Klone repoet: `git clone https://github.com/yourusername/IS-218-oppgave2-gruppe10.git`
 2. Naviger til prosjektmappen: `cd IS-218-oppgave2-gruppe10`
 3. Installer avhengigheter: `npm install`
-4. Kopier `.env.example` til `.env` og legg til dine Supabase-detaljer
+4. Legg til Supabase URL og KEY til .env filen.
 5. Start serveren: `npm start`
 6. Åpne nettleseren på: `http://localhost:3002`
 
