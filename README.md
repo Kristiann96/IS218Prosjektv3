@@ -29,10 +29,16 @@ Prosjektets formål er å utvikle en nettbasert applikasjon som:
 ✅ Utforsker alternative tilfluktsmuligheter, som for eksempel turistforeningens hytter (basic_hut fra OSM).
 
 # 🗺️ Teknologivalg
-BLABLABLABLA
-BLABLABLABLA
-BLABLABLABLA
-BLABLABLABLA
+
+Prosjektet er bygget med følgende teknologier:
+- **Express.js**: Brukt som back-end rammeverk for å håndtere server-side logikk og API-forespørsler
+- **Leaflet.js**: Åpen kildekode JavaScript bibliotek for interaktive kart
+- **Supabase**: Database og API-tjenester for å lagre og hente geografiske data
+- **PostgreSQL med PostGIS**: Kraftig database med geografisk funksjonalitet
+- **Proj4js**: Bibliotek for geografiske koordinattransformasjoner
+- **Leaflet Draw**: Tilleggspakke for Leaflet som muliggjør tegning av figurer på kartet
+
+Prosjektet bruker moderne GIS-teknologier for å visualisere og analysere romlige data. Leaflet gir oss et lettvindt kart-grensesnitt, mens PostGIS i Supabase gir oss kraftige romlige analysemuligheter. Proj4js muliggjør konvertering mellom ulike koordinatsystemer, noe som er særlig viktig for norske kartdata som ofte bruker UTM Sone 32N (EPSG:25832).
 
 # 📊 Datasettene
 Prosjektet benytter tre primære datasett:
@@ -43,39 +49,100 @@ Basic_hut-shelters: Filtrert datasett som viser enkle hytter i mindre sentrale s
 
 # 🔍 Metode og implementering
 
-1️⃣ Kartlegging av tilfluktsromskapasitet per område
-Ved hjelp av PostGIS analyseres forholdet mellom befolkningstall og kapasitet for tilfluktsrom i hvert område. 
-Spørringen under beregner antall mennesker per tilgjengelig tilfluktsromsplass:
+# 🔍 Metode og implementering
 
-2️⃣ Brukerinteraksjon – Finn nærmeste tilfluktsrom
-Brukeren kan tillate geolokasjon, og systemet vil finne det nærmeste tilfluktsrommet:
-🏢 Nærmeste offentlige tilfluktsrom vises med avstand i kilometer.
-⛺ Alternativt basic_hut tilbys dersom ingen offentlige rom er i nærheten.
+Prosjektet følger en klient-server arkitektur med Express.js på serversiden og Leaflet.js på klientsiden.
 
-3️⃣ Interaktiv kartvisning
-Røde prikker 🔴 = overbelastede tilfluktsrom.
-Gule prikker 🟡 = moderat kapasitet.
-Grønne prikker 🟢 = Tilstrekkelig plass ( SANSYNLIGVIS IKKE BRUKT).
-Brukerens posisjon 📍 kan vises for å gi en personlig tilpassning.
-🔹 Kartlaget kan filtreres mellom offentlige tilfluktsrom og basic huts.
+1️⃣ **Datainnsamling og lagring**
+- Geodata for tilfluktsrom og befolkning er hentet fra offentlige API-er (Geonorge/SSB)
+- Data er lagret i Supabase med PostGIS-utvidelser for effektiv geografisk spørringshåndtering
+- Koordinater er normalisert til samme koordinatsystem (WGS84) for korrekt visning på kart
+
+2️⃣ **Kartvisualisering**
+- Kartgrunnlag fra OpenStreetMap er brukt som bakgrunnskart
+- Tilfluktsrom vises med egne ikoner og popups med detaljert informasjon
+- Befolkningsdata vises som fargede polygoner der farge indikerer befolkningstetthet
+- Brukerens posisjon kan spores og vises via geolocation API
+
+3️⃣ **Interaktive analyseverktøy**
+- Tegne- og analyseverktøy er implementert ved hjelp av Leaflet Draw
+- Brukere kan tegne sirkler, rektangler eller polygoner på kartet
+- Systemet beregner automatisk total befolkning og tilfluktsromskapasitet innenfor det markerte området
+- Dekningsgrad beregnes som prosentandel av befolkning som kan få plass i tilfluktsrom
+
+4️⃣ **Serverside prosessering**
+- Express.js håndterer API-forespørsler til Supabase
+- Data transformeres til klientvennlig format før sending til frontend
+- Systemet optimaliserer datamengden som sendes til klienten for å sikre god ytelse
 
 # 📢 Mulig videre arbeid og atvidelser
-✅ Utvidelse av datasett: Inkludere flere attributter, f.eks. ?????????????.
-✅ Sanntidsoppdateringer: Oppkobling mot API-er for oppdatert tilgjengelig kapasitet i nødsituasjon.
-✅ Trafikkanalyse: Estimere reisetid til nærmeste tilfluktsrom.
+# 📢 Mulig videre arbeid og utvidelser
+
+Prosjektet har flere muligheter for utvidelse og forbedring:
+
+✅ **Utvidede datakilder**
+- Inkludere private tilfluktsrom i analysen
+- Legge til flere attributter for tilfluktsrom, som tilstand, tilgjengelighet, og fasilitetsoversikt
+- Inkorporere høydedata for å analysere terrengets innvirkning på tilgjengelighet
+
+✅ **Avansert analyse**
+- Implementere "isochrone" analyse for å vise områder som er innen 5, 10, og 15 minutters gange fra tilfluktsrom
+- Analyse av befolkningsbevegelser på ulike tider av døgnet (dag vs. natt)
+- Simuleringsmodeller for evakueringsscenarier med ulike tidsrammer
+
+✅ **Tekniske forbedringer**
+- Implementere caching-strategier for bedre ytelse ved håndtering av store datasett
+- Optimaliser mobilvisning og støtte for ulike enheter
+- Legge til offline-funksjonalitet for krisesituasjoner med ustabil internettilkobling
+
+✅ **Brukergrensesnitt og funksjonalitet**
+- Utbedre rapporteringsfunksjonalitet med eksport til PDF eller Excel
+- Implementere brukerveiledninger og hjelp integrert i applikasjonen
+- Støtte for flere språk, spesielt viktig for kriseinformasjon
 
 # 📂 Kildekode og brukerveiledning
-🔗 GitHub Repository: [Legg til lenke her]
-📄 Hvordan kjøre prosjektet:
-📝 Avhengigheter: 
-BLABLABLABLABLABAL
-BLABLABLABLABLABAL
-BLABLABLABLABLABAL
-BLABLABLABLABLABAL
+# 📂 Kildekode og brukerveiledning
+
+🔗 **GitHub Repository**: [https://github.com/yourusername/IS-218-oppgave2-gruppe10](https://github.com/yourusername/IS-218-oppgave2-gruppe10)
+
+## Hvordan kjøre prosjektet:
+
+1. Klone repoet: `git clone https://github.com/yourusername/IS-218-oppgave2-gruppe10.git`
+2. Naviger til prosjektmappen: `cd IS-218-oppgave2-gruppe10`
+3. Installer avhengigheter: `npm install`
+4. Kopier `.env.example` til `.env` og legg til dine Supabase-detaljer
+5. Start serveren: `npm start`
+6. Åpne nettleseren på: `http://localhost:3002`
+
+## Avhengigheter:
+- Node.js (v14 eller nyere)
+- NPM eller Yarn pakkebehandler
+- Moderne nettleser med JavaScript aktivert
+- Supabase-konto (for database-tilgang)
+
+## Bruk av applikasjonen:
+1. **Navigere kartet**: Bruk zoom og pan-kontroller for å utforske kartet
+2. **Finn posisjon**: Trykk på "Finn min posisjon" for å bruke din nåværende lokasjon
+3. **Vis/skjul lag**: Bruk avkrysningsboksene øverst for å vise eller skjule ulike datalag
+4. **Analyser område**: Bruk tegneverkøyet til å markere et område for analyse
+5. **Se resultater**: Analyseresultater vises automatisk under kartet
+6. **Fjern analyse**: Trykk på "Fjern analyse" for å starte på nytt
 
 
 # 📜 Konklusjon
-Denne applikasjonen demonstrerer hvordan geografisk IT-utvikling kan brukes til å analysere og forbedre samfunnsberedskap. Ved å kombinere befolkningsdata, tilfluktsromsinformasjon og alternative tilfluktsmuligheter kan det avdekkes kritiske mangler i nødberedskap og gi brukere nyttig informasjon om nærmeste sikre eller alternative tilfluktssted.
+
+Denne applikasjonen demonstrerer hvordan geografisk IT-utvikling kan brukes til å analysere og forbedre samfunnsberedskap. Ved å kombinere befolkningsdata, tilfluktsromsinformasjon og alternative tilfluktsmuligheter, avdekkes kritiske mangler i nødberedskap som kan ha stor betydning for sikkerhet i krisesituasjoner.
+
+Gjennom prosjektet har vi oppnådd følgende:
+
+1. **Kartlagt dekningsgraden** for tilfluktsrom i forhold til befolkning i Agder
+2. **Identifisert geografiske områder** med kapasitetsutfordringer
+3. **Utviklet verktøy** for romlig analyse av beredskapsinfrastruktur
+4. **Demonstrert verdien** av åpne datasett for samfunnssikkerhet
+
+Resultatene indikerer at det er store variasjoner i tilfluktsromsdekning på tvers av regionen. Mange områder med høy befolkningstetthet har utilstrekkelig kapasitet, hvilket understreker behovet for ytterligere planlegging og ressursallokering.
+
+Denne type geografiske analyseverktøy kan være verdifulle for kommuner, fylker og nasjonale myndigheter i deres arbeid med beredskapsplanlegging og risikohåndtering. Det demonstrerer også viktigheten av å vedlikeholde oppdaterte og nøyaktige datasett for kritisk infrastruktur.
 
 # 📚 Kilder
 Kartverket / GeoNorge: https://kartkatalog.geonorge.no
