@@ -73,7 +73,7 @@ Prosjektet følger en klient-server arkitektur med Express.js på serversiden og
 - Data transformeres til klientvennlig format før sending til frontend
 - Systemet optimaliserer datamengden som sendes til klienten for å sikre god ytelse
 
-# 📢 Mulig videre arbeid og atvidelser
+# 📢 Mulig videre arbeid og utvidelser
 
 Prosjektet har flere muligheter for utvidelse og forbedring:
 
