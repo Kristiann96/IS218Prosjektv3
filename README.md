@@ -49,12 +49,10 @@ Basic_hut-shelters: Filtrert datasett som viser enkle hytter i mindre sentrale s
 
 # 🔍 Metode og implementering
 
-# 🔍 Metode og implementering
-
 Prosjektet følger en klient-server arkitektur med Express.js på serversiden og Leaflet.js på klientsiden.
 
 1️⃣ **Datainnsamling og lagring**
-- Geodata for tilfluktsrom og befolkning er hentet fra offentlige API-er (Geonorge/SSB)
+- Geodata for tilfluktsrom og befolkning er hentet fra offentlige API-er (Geonorge)
 - Data er lagret i Supabase med PostGIS-utvidelser for effektiv geografisk spørringshåndtering
 - Koordinater er normalisert til samme koordinatsystem (WGS84) for korrekt visning på kart
 
@@ -76,7 +74,6 @@ Prosjektet følger en klient-server arkitektur med Express.js på serversiden og
 - Systemet optimaliserer datamengden som sendes til klienten for å sikre god ytelse
 
 # 📢 Mulig videre arbeid og atvidelser
-# 📢 Mulig videre arbeid og utvidelser
 
 Prosjektet har flere muligheter for utvidelse og forbedring:
 
@@ -100,7 +97,6 @@ Prosjektet har flere muligheter for utvidelse og forbedring:
 - Implementere brukerveiledninger og hjelp integrert i applikasjonen
 - Støtte for flere språk, spesielt viktig for kriseinformasjon
 
-# 📂 Kildekode og brukerveiledning
 # 📂 Kildekode og brukerveiledning
 
 🔗 **GitHub Repository**: [https://github.com/yourusername/IS-218-oppgave2-gruppe10](https://github.com/yourusername/IS-218-oppgave2-gruppe10)
