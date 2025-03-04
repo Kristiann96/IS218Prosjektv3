@@ -29,6 +29,12 @@ Prosjektets formål er å utvikle en nettbasert applikasjon som:
 
 # 🗺️ Teknologivalg
 
+## Dataforbehandling med QGIS
+OpenStreetMap-data ble forhåndsbehandlet i QGIS før den ble lastet opp til Supabase. Dette inkluderte:
+- Filtrering av shelter-data fra OpenStreetMap for å kun inkludere "basic_huts" og ikke alle shelter-typer (som f.eks. gapahuker og busstoppesteder), og geografisk filtrering for å fokusere på Agder-regionen
+- Oppretting av kobling mellom QGIS og Supabase for effektiv dataoverføring, for data frå både OSM og Geonorge.
+
+
 Prosjektet er bygget med følgende teknologier:
 - **Express.js**: Brukt som back-end rammeverk for å håndtere server-side logikk og API-forespørsler
 - **Leaflet.js**: Åpen kildekode JavaScript bibliotek for interaktive kart
@@ -37,7 +43,7 @@ Prosjektet er bygget med følgende teknologier:
 - **Proj4js**: Bibliotek for geografiske koordinattransformasjoner
 - **Leaflet Draw**: Tilleggspakke for Leaflet som muliggjør tegning av figurer på kartet
 
-Prosjektet bruker moderne GIS-teknologier for å visualisere og analysere romlige data. Leaflet gir oss et lettvindt kart-grensesnitt, mens PostGIS i Supabase gir oss kraftige romlige analysemuligheter. Proj4js muliggjør konvertering mellom ulike koordinatsystemer, noe som er særlig viktig for norske kartdata som ofte bruker UTM Sone 32N (EPSG:25832).
+Prosjektet bruker moderne GIS-teknologier for å visualisere og analysere romlige data. 
 
 # 📊 Datasettene
 Prosjektet benytter tre primære datasett:
