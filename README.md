@@ -29,7 +29,7 @@ Prosjektets formål er å utvikle en nettbasert applikasjon som:
 
 # 🗺️ Teknologivalg
 
-## Dataforbehandling med QGIS
+**Dataforbehandling med QGIS**
 OpenStreetMap-data ble forhåndsbehandlet i QGIS før den ble lastet opp til Supabase. Dette inkluderte:
 - Filtrering av shelter-data fra OpenStreetMap for å kun inkludere "basic_huts" og ikke alle shelter-typer (som f.eks. gapahuker og busstoppesteder), og geografisk filtrering for å fokusere på Agder-regionen
 - Oppretting av kobling mellom QGIS og Supabase for effektiv dataoverføring, for data frå både OSM og Geonorge.
