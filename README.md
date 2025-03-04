@@ -1,5 +1,4 @@
 # IS-218-oppgave2-gruppe10
-# KUN UTKAST/FORSLAG!
 
 - [Problemstilling](#problemstilling)
 - [Målsetning](#målsetning)
@@ -20,7 +19,7 @@ Denne applikasjonen undersøker følgende spørsmål:
 
 Er det nok tilfluktsrom i Agder til å dekke behovet i en krisesituasjon?
 Hvilke områder har størst kapasitetsutfordringer?
-Kan alternativer, som enkle "basic huts" fra OpenStreetMap, bidra til å gi inbyggere tilfluktssteder?
+Kan alternativer, som enkle "basic huts" fra OpenStreetMap (OSM), bidra til å gi inbyggere tilfluktssteder?
 
 # 🎯 Målsetning
 Prosjektets formål er å utvikle en nettbasert applikasjon som:
