@@ -132,6 +132,9 @@ Prosjektet har flere muligheter for utvidelse og forbedring:
 
 # 📜 Konklusjon
 
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/06bd7032-e6eb-424a-8afc-09c1c6b8860b)
+
+
 Denne applikasjonen demonstrerer hvordan geografisk IT-utvikling kan brukes til å analysere og forbedre samfunnsberedskap. Ved å kombinere befolkningsdata, tilfluktsromsinformasjon og alternative tilfluktsmuligheter, avdekkes kritiske mangler i nødberedskap som kan ha stor betydning for sikkerhet i krisesituasjoner.
 
 Gjennom prosjektet har vi oppnådd følgende:
